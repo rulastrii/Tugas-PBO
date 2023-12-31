@@ -1,0 +1,11 @@
+creat database dbumc (membuat database dbumc)
+creat table mahasiswa (membuat tabel mahasiswa)
+select * from mahasiswa (menampilkan tabel mahasiswa)
+
+
+
+INSERT INTO `dbumc`.`mahasiswa` (`id`, `nim`, `nama`, `jk`, `prodi`) VALUES (NULL, '220511071', 'Rulastri', 'P', 'Teknik Informatika');
+INSERT INTO `dbumc`.`mahasiswa` (`id`, `nim`, `nama`, `jk`, `prodi`) VALUES (NULL, '220511011', 'Rifki', 'L', 'Ilmu Komputer');
+INSERT INTO `dbumc`.`mahasiswa` (`id`, `nim`, `nama`, `jk`, `prodi`) VALUES (NULL, '200311190', 'Zahro', 'P', 'Ilmu Komunikasi');
+
+pertemuan k,l : 10

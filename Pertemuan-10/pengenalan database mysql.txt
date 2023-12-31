@@ -1,0 +1,41 @@
+pengenalan database mysql
+1. mysql merupakan database yang paling banyak digunakan
+2. paling mudah di install
+3. paling mudah dipelajari
+4. gratis
+5. mysql termasuk kelompok database: RDBMS (Relationship Database Management System)
+	database mana saja yang termasuk RDBMS:
+	1. ORACLE
+	2. SQL SERVER
+	3. MYSQL
+	4. POSTGRESQL
+	5. SQLite
+RDBMS merupakan database yang terdiri atas tabel-tabel
+6. Selain kelompok RDBMS ada kelompok databse yang lain yaitu: No SQL (code politan)
+	1. MongoDB
+	2. Apache HBase
+	3. Cassandra
+	4. couchdb
+
+1. Bagaimana cara instalasi MYSQL?
+	1. instalasi secara lokal
+		menggunakan server lokal:
+		a. xampp
+		b. wampserver
+		c. laragon
+	2. menggunakan mysql dari provider gratis di internet
+		a. freedb.tech
+		b. db4free.net
+2. Bagaimana mengakses mysql setelah di install?
+	xampp control panel.exe
+		appache, mysql => berwarna hijau
+	https://localhost/
+	1. klik menu hphmyadmin (tanpa login)
+	2. klik menu phpmyadmin (login-> user: root, password:[dikosongkan])
+3. Bagaimana cara membuat dabatase baru?
+4. Bagaimana cara membuat tabel di dalam database yang baru dibuat?
+5. Bagaimana cara menambahkan data ke dalam tabel?
+6. Bagaimana cara mengedit data yang telah ada di dalam tabel?
+7. Bagaimana cara menghapus data dari sebuah tabel?
+8. Bagaimana cara menampilkan semua data dari sebuah tabel?
+9. Bagaimana cara menampilkan data tertentu dari sebuah tabel?
