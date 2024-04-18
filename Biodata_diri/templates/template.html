@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata Diri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1>Personal Data</h1>
+        <p>Nama: {{ nama }}</p>
+        <p>NIM: {{ nim }}</p>
+        <p>Program Studi: {{ prodi }}</p>
+        
+        <!-- Button to go back -->
+        <a href="javascript:history.back()" class="btn btn-primary">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* style.css */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    margin: 20px;
+}
+
+a {
+    display: block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px;
+}
+
+a:hover {
+    background-color: #fdfdfd;
+}

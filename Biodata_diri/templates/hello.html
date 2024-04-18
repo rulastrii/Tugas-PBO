@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata Diri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1>Welcome to My Bio</h1>
+        <p>Hello, {{ nama }}</p>
+
+        <!-- Button to go see full bio -->
+        <a href="/template" class="btn btn-primary">See Full Bio</a>
+    </div>
+</body>
+</html>
