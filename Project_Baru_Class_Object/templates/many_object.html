@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Many Objects</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Many Objects</h1>
+    <!-- Bagian Mahasiswa -->
+    <div>
+        <h2>Mahasiswa</h2>
+        <!-- Tabel untuk menampilkan data mahasiswa -->
+        <table>
+            <thead>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Jurusan</th>
+                    <th>Angkatan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Looping melalui setiap objek mahasiswa -->
+                {% for mahasiswa in mahasiswa %}
+                <tr>
+                    <!-- Menampilkan atribut NIM, nama, jurusan, dan angkatan -->
+                    <td>{{ mahasiswa.nim }}</td>
+                    <td>{{ mahasiswa.nama }}</td>
+                    <td>{{ mahasiswa.jurusan }}</td>
+                    <td>{{ mahasiswa.angkatan }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Bagian Dosen -->
+    <div>
+        <h2>Dosen</h2>
+        <!-- Tabel untuk menampilkan data dosen -->
+        <table>
+            <thead>
+                <tr>
+                    <th>NIDN</th>
+                    <th>Nama</th>
+                    <th>Spesialis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Looping melalui setiap objek dosen -->
+                {% for dosen in dosen %}
+                <tr>
+                    <!-- Menampilkan atribut NIDN, nama, dan spesialis -->
+                    <td>{{ dosen.nidn }}</td>
+                    <td>{{ dosen.nama }}</td>
+                    <td>{{ dosen.spesialis }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

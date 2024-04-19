@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8"> <!-- Mendefinisikan set karakter yang digunakan oleh dokumen HTML -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Menentukan cara browser harus merespons ukuran layar -->
+    <title>One Object</title> <!-- Judul halaman -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Memasukkan file stylesheet eksternal -->
+</head>
+<body>
+    <!-- Konten halaman -->
+    <h1>One Object</h1> <!-- Heading level 1 yang menampilkan judul halaman -->
+
+    <!-- Bagian Informasi Mahasiswa -->
+    <div>
+        <h2>Mahasiswa</h2> <!-- Heading level 2 yang menampilkan judul bagian untuk informasi mahasiswa -->
+        <p>NIM: {{ mahasiswa[0].nim }}</p> <!-- Paragraf yang menampilkan NIM mahasiswa -->
+        <p>Nama: {{ mahasiswa[0].nama }}</p> <!-- Paragraf yang menampilkan nama mahasiswa -->
+        <p>Jurusan: {{ mahasiswa[0].jurusan }}</p> <!-- Paragraf yang menampilkan jurusan mahasiswa -->
+        <p>Angkatan: {{ mahasiswa[0].angkatan }}</p> <!-- Paragraf yang menampilkan angkatan mahasiswa -->
+    </div>
+
+    <!-- Bagian Informasi Dosen -->
+    <div>
+        <h2>Dosen</h2> <!-- Heading level 2 yang menampilkan judul bagian untuk informasi dosen -->
+        <p>NIDN: {{ dosen[0].nidn }}</p> <!-- Paragraf yang menampilkan NIDN dosen -->
+        <p>Nama: {{ dosen[0].nama }}</p> <!-- Paragraf yang menampilkan nama dosen -->
+        <p>Spesialis: {{ dosen[0].spesialis }}</p> <!-- Paragraf yang menampilkan spesialis dosen -->
+    </div>
+</body>
+</html>

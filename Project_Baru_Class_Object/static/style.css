@@ -1,0 +1,60 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #2980b9, #2c3e50); /* Gradien linear */
+    color: #fff; /* Warna teks */
+}
+
+h1, h2 {
+    color: #fff; /* Warna teks */
+}
+
+p {
+    color: #ddd; /* Warna teks */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Warna latar belakang tabel dengan transparansi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    border-radius: 8px; /* Sudut bulat */
+    overflow: hidden; /* Hindari shadow terpotong */
+    border: 2px solid #ddd; /* Garis pada semua sisi */
+}
+
+table th, table td {
+    padding: 12px 15px; /* Padding */
+    text-align: justify;
+    border-bottom: 1px solid #ddd; /* Garis pemisah antar baris */
+    color: #333; /* Warna teks */
+}
+
+table th {
+    background-color: #f2f2f2; /* Warna latar belakang header tabel */
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid #333; /* Garis tebal pada header */
+}
+
+table tr:hover {
+    background-color: #f9f9f9; /* Warna latar belakang saat kursor di atas baris */
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna latar belakang untuk baris genap */
+}
+
+table th:first-child,
+table td:first-child {
+    border-top-left-radius: 8px; /* Sudut bulat untuk sudut kiri atas */
+    border-bottom-left-radius: 8px; /* Sudut bulat untuk sudut kiri bawah */
+}
+
+table th:last-child,
+table td:last-child {
+    border-top-right-radius: 8px; /* Sudut bulat untuk sudut kanan atas */
+    border-bottom-right-radius: 8px; /* Sudut bulat untuk sudut kanan bawah */
+}
