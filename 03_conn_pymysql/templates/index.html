@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data from MySQL</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Data from MySQL Database</h1>
+    <!-- Tombol Tambah Data -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+        <i class="fas fa-plus"></i> Add Data
+    </button>
+
+    <!-- Alert Pesan -->
+    <div id="alertSuccess" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;"> 
+        Data berhasil disimpan.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Modal Tambah Data -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel"> Add Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/insert" method="post">
+                        <div class="form-group">
+                            <label for="nidn">NIDN</label>
+                            <input type="text" class="form-control" id="nidn" name="nidn">
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Tutup</button>
+                    <button type="submit" class="btn btn-primary" onclick="showSuccessAlert()"> Simpan</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NIDN</th>
+                <th>Nama</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in dosen %}
+            <tr>
+                <td>{{ obj.nidn }}</td>
+                <td>{{ obj.nama }}</td>
+                <td>
+                    <!-- Tombol Hapus -->
+                    <form id="deleteForm{{ obj.nidn }}" action="/delete/{{ obj.nidn }}" method="post" style="display: inline-block;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </button>
+                    </form>
+					
+                    <!-- Tombol Update -->
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateModal{{ obj.nidn }}">
+                        <i class="fas fa-edit"></i> Update
+                    </button>
+                </td>
+            </tr>
+
+            <!-- Modal Update Data -->
+            <div class="modal fade" id="updateModal{{ obj.nidn }}" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel{{ obj.nidn }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="updateModalLabel{{ obj.nidn }}"> Update Data</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/update/{{ obj.nidn }}" method="post">
+                                <div class="form-group">
+                                    <label for="new_nama">Nama Baru</label>
+                                    <input type="text" class="form-control" id="new_nama" name="new_nama" value="{{ obj.nama }}">
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"> Tutup</button>
+                            <button type="submit" class="btn btn-primary" onclick="showSuccessAlert()"> Simpan Perubahan</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        function showSuccessAlert() {
+            $("#alertSuccess").fadeIn();
+            setTimeout(function () {
+                $("#alertSuccess").fadeOut();
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>

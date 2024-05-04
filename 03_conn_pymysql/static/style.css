@@ -1,0 +1,120 @@
+/* Mengatur font untuk seluruh dokumen */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Mengatur gaya tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ddd; /* Warna garis pinggir tabel */
+}
+
+/* Mengatur gaya header kolom */
+th {
+    background-color: #f2f2f2; /* Warna latar belakang header */
+    color: #333; /* Warna teks header */
+    font-weight: bold; /* Teks header tebal */
+    padding: 10px; /* Padding di dalam header */
+    text-align: left; /* Teks rata kiri */
+    border-right: 1px solid #ddd; /* Garis kanan header */
+}
+
+/* Mengatur gaya sel di dalam tabel */
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd; /* Garis bawah setiap sel */
+    border-right: 1px solid #ddd; /* Garis kanan setiap sel */
+}
+
+/* Mengatur garis kiri sel pertama */
+td:first-child {
+    border-left: 1px solid #ddd; /* Garis kiri sel pertama */
+}
+
+/* Mengatur warna latar belakang setiap baris genap */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Warna latar belakang untuk baris genap */
+}
+
+/* Mengatur warna latar belakang saat kursor berada di atas baris */
+tr:hover {
+    background-color: #ddd; /* Warna latar belakang saat kursor berada di atas baris */
+}
+
+/* Efek transisi saat kursor berada di atas baris */
+tr:hover td {
+    transition: background-color 0.3s ease; /* Efek transisi */
+}
+
+/* style.css */
+.delete-btn {
+    background-color: #dc3545; /* Warna latar belakang tombol */
+    color: white; /* Warna teks */
+    border: none; /* Menghapus border */
+    padding: 5px 10px; /* Padding di dalam tombol */
+    border-radius: 5px; /* Membuat sudut tombol menjadi melengkung */
+    cursor: pointer; /* Mengubah kursor saat di atas tombol */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Warna latar belakang saat hover */
+}
+
+/* Mengatur ikon pada tombol */
+.delete-btn i {
+    margin-right: 5px; /* Margin ikon dari teks */
+}
+
+/* style.css */
+.update-btn {
+    background-color: #28a745; /* Warna latar belakang tombol */
+    color: white; /* Warna teks */
+    border: none; /* Menghapus border */
+    padding: 5px 10px; /* Padding di dalam tombol */
+    border-radius: 5px; /* Membuat sudut tombol menjadi melengkung */
+    cursor: pointer; /* Mengubah kursor saat di atas tombol */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.update-btn:hover {
+    background-color: #218838; /* Warna latar belakang saat hover */
+}
+
+/* Mengatur ikon pada tombol */
+.update-btn i {
+    margin-right: 5px; /* Margin ikon dari teks */
+}
+
+
+/* Tombol "Tambah Data" */
+.add-btn {
+    margin-bottom: 20px; /* Menambah jarak antara tombol dan elemen di bawahnya */
+    background-color: #4682b4; /* Warna latar belakang tombol */
+    color: white; /* Warna teks */
+    border: none; /* Menghapus border */
+    padding: 5px 10px; /* Padding di dalam tombol */
+    border-radius: 5px; /* Membuat sudut tombol menjadi melengkung */
+    cursor: pointer; /* Mengubah kursor saat di atas tombol */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+.add-btn:hover {
+    background-color: #4169e1; /* Warna latar belakang saat hover */
+}
+
+/* Mengatur ikon pada tombol */
+.update-btn i {
+    margin-right: 5px; /* Margin ikon dari teks */
+}
+
+/* style.css */
+table {
+    margin-top: 20px; /* Menambah jarak antara tabel dan elemen di atasnya */
+    width: 100%;
+    max-width: 1500px; /* Maksimum lebar tabel */
+    border-collapse: collapse;
+    border: 2px solid #ddd; /* Warna garis pinggir tabel */
+}
+
