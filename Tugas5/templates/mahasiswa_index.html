@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mahasiswa</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h1 align="center">Data Mahasiswa<br> Universitas Muhammadiyah Cirebon</h1>
+	<p align="center">
+		Kampus 1 (Kampus Utama): Jl. Tuparev No.70, Cirebon
+		<br>Kampus 2 : Jl. Watubelah No.40
+		<br>Sumber telepon: 085213777753 Email: pmb@umc.ac.id
+	</p>
+    <a href="/mahasiswa/create"><i class="fas fa-plus-circle"></i> Tambah</a><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>NAMA</th>
+                <th>TEMPAT LAHIR</th>
+                <th>TANGGAL LAHIR</th>
+                <th>JENIS KELAMIN</th>
+                <th>JURUSAN</th>
+                <th>ALAMAT</th>
+                <th>GAMBAR</th>
+                <th colspan="2">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in data %}
+            <tr>
+                <td>{{ obj.nim }}</td>
+                <td>{{ obj.nama }}</td>
+                <td>{{ obj.tempat_lahir }}</td>
+                <td>{{ obj.tanggal_lahir }}</td>
+                <td>{{ obj.jenis_kelamin }}</td>
+                <td>{{ obj.jurusan }}</td>
+                <td>{{ obj.alamat }}</td>
+				<td><img src="/static/gambar/{{ obj.gambar }}" alt="Gambar Mahasiswa"></td>
+				<td>
+					<a href="/mahasiswa/edit/{{ obj.id }}">
+						<i class="fas fa-edit">Edit</i>
+					</a>
+				</td>
+				<td>
+					<a href="/mahasiswa/delete/{{ obj.id }}" title="delete" class="delete" onclick="return confirm('Anda yakin untuk menghapus data ini?')">
+						<i class="fas fa-trash-alt">Hapus</i>
+					</a>
+				</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

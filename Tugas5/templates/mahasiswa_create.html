@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Mahasiswa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h2 align="center">Input Data Mahasiswa</h2>
+    <!-- Tambahkan tag <a> dengan class "kembali" dan icon -->
+    <a href="/mahasiswa/" class="kembali">
+        <i class="fas fa-arrow-left"></i>
+        Kembali
+    </a><br><br>
+    <form action="/mahasiswa/store" method="POST" enctype="multipart/form-data">
+        <label for="nim">NIM:</label><br>
+        <input type="text" id="nim" name="nim" required><br>
+        <label for="nama">NAMA:</label><br>
+        <input type="text" id="nama" name="nama" required><br>
+        <label for="tempat_lahir">TEMPAT LAHIR:</label><br>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" required><br>
+        <label for="tanggal_lahir">TANGGAL LAHIR:</label><br>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required><br>
+        <label for="jenis_kelamin">JENIS KELAMIN:</label><br>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+            <option value="1">Laki-laki</option>
+            <option value="2">Perempuan</option>
+        </select><br>
+        <label for="jurusan">JURUSAN:</label><br>
+        <select id="jurusan" name="jurusan" required>
+            <option value="1">Teknik Informatika</option>
+            <option value="2">Kimia</option>
+            <option value="3">Olahraga</option>
+            <option value="4">Matematika</option>
+        </select><br>
+        <label for="alamat">ALAMAT:</label><br>
+        <input type="text" id="alamat" name="alamat" required><br>
+        <label for="gambar">GAMBAR:</label><br>
+        <input type="file" id="gambar" name="gambar" required><br>
+        <br>
+        <!-- Tombol dengan ikon Font Awesome -->
+        <input type="submit" value="Submit" class="btn-submit">
+    </form>
+</body>
+</html>

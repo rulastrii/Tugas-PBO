@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Mahasiswa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <h2 align="center">Edit Data Mahasiswa</h2>
+    <!-- Tambahkan tag <a> dengan class "kembali" dan icon -->
+    <a href="/mahasiswa/" class="kembali">
+        <i class="fas fa-arrow-left"></i>
+        Kembali
+    </a><br><br>
+    <form action="/mahasiswa/update/{{ obj.id }}"  method="POST" enctype="multipart/form-data">
+        <label for="nim">NIM:</label><br>
+        <input type="text" id="nim" name="nim" required value="{{ obj.nim }}"><br>
+        <label for="nama">NAMA:</label><br>
+        <input type="text" id="nama" name="nama" required value="{{ obj.nama }}"><br>
+        <label for="tempat_lahir">TEMPAT LAHIR:</label><br>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" required value="{{ obj.tempat_lahir }}"><br>
+        <label for="tanggal_lahir">TANGGAL LAHIR:</label><br>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required value="{{ obj.tanggal_lahir }}"><br>
+        <label for="jenis_kelamin">JENIS KELAMIN:</label><br>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+            <option value="1" {% if obj.jenis_kelamin == '1' %} selected {% endif %}>Laki-laki</option>
+            <option value="2" {% if obj.jenis_kelamin == '2' %} selected {% endif %}>Perempuan</option>
+        </select><br>
+        <label for="jurusan">JURUSAN:</label><br>
+        <select id="jurusan" name="jurusan" required>
+            <option value="1" {% if obj.jurusan == '1' %} selected {% endif %}>Teknik Informatika</option>
+            <option value="2" {% if obj.jurusan == '2' %} selected {% endif %}>Kimia</option>
+            <option value="3" {% if obj.jurusan == '3' %} selected {% endif %}>Olahraga</option>
+            <option value="4" {% if obj.jurusan == '4' %} selected {% endif %}>Matematika</option>
+        </select><br>
+        <label for="alamat">ALAMAT:</label><br>
+        <input type="text" id="alamat" name="alamat" required value="{{ obj.alamat }}"><br>
+        <label for="gambar">GAMBAR:</label><br>
+        <input type="file" id="gambar" name="gambar" required><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
