@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Edit Mahasiswa</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="date"],
+        select {
+            flex: 1; /* Menyesuaikan lebar input */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%; /* Memastikan select mengisi 100% lebar parent */
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button, a.button {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+        }
+        button {
+            background-color: #333;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        button i, a.button i {
+            margin-right: 5px;
+        }
+        a.button {
+            background-color: #f8f9fa;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+        a.button:hover {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edit Mahasiswa</h1>
+    </header>
+    <br><br>
+    <form action="/mahasiswa/update/{{ obj.id }}" method="POST" enctype="multipart/form-data">
+        <label for="nim">NIM:</label><br>
+        <input type="text" id="nim" name="nim" required value="{{ obj.nim }}"><br>
+        <label for="nama">NAMA:</label><br>
+        <input type="text" id="nama" name="nama" required value="{{ obj.nama }}"><br>
+        <label for="tempat_lahir">TEMPAT LAHIR:</label><br>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" required value="{{ obj.tempat_lahir }}"><br>
+        <label for="tanggal_lahir">TANGGAL LAHIR:</label><br>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required value="{{ obj.tanggal_lahir }}"><br>
+        <label for="jenis_kelamin">JENIS KELAMIN:</label><br>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+            <option value="1" {% if obj.jenis_kelamin == '1' %} selected {% endif %}>Laki-laki</option>
+            <option value="2" {% if obj.jenis_kelamin == '2' %} selected {% endif %}>Perempuan</option>
+        </select><br>
+        <label for="jurusan">JURUSAN:</label><br>
+        <select id="jurusan" name="jurusan" required>
+            <option value="1" {% if obj.jurusan == '1' %} selected {% endif %}>Teknik Informatika</option>
+            <option value="2" {% if obj.jurusan == '2' %} selected {% endif %}>Kimia</option>
+            <option value="3" {% if obj.jurusan == '3' %} selected {% endif %}>Olahraga</option>
+            <option value="4" {% if obj.jurusan == '4' %} selected {% endif %}>Matematika</option>
+        </select><br>
+        <label for="alamat">ALAMAT:</label><br>
+        <input type="text" id="alamat" name="alamat" required value="{{ obj.alamat }}"><br>
+        <label for="gambar">GAMBAR:</label><br>
+        <input type="file" id="gambar" name="gambar" required><br>
+        <br>
+        <div class="form-actions">
+            <a href="/mahasiswa" class="icon"><i class="fas fa-arrow-left"></i> Kembali</a>
+            <button type="submit" class="icon"><i class="fas fa-save"></i> Simpan</button>
+        </div>
+    </form>
+</body>
+</html>

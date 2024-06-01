@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Form Input Mahasiswa</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+    /* Form Styles */
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        margin-bottom: 5px;
+        color: #333;
+    }
+    input[type="text"],
+    input[type="date"],
+    select {
+        flex: 1; /* Menyesuaikan lebar input */
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    select {
+        width: 100%; /* Memastikan select mengisi 100% lebar parent */
+    }
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+    a.button {
+        background-color: #f8f9fa;
+        color: #333;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    a.button:hover {
+        background-color: #e9ecef;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Form Input Mahasiswa</h1>
+    </header>
+    <br><br>
+    <form action="/mahasiswa/store" method="POST" enctype="multipart/form-data">
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" name="nim" required>
+        <label for="nama">NAMA:</label>
+        <input type="text" id="nama" name="nama" required>
+        <label for="tempat_lahir">TEMPAT LAHIR:</label>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+        <label for="tanggal_lahir">TANGGAL LAHIR:</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+        <label for="jenis_kelamin">JENIS KELAMIN:</label>
+        <select id="jenis_kelamin" name="jenis_kelamin" required>
+            <option value="1">Laki-laki</option>
+            <option value="2">Perempuan</option>
+        </select>
+        <label for="jurusan">JURUSAN:</label>
+        <select id="jurusan" name="jurusan" required>
+            <option value="1">Teknik Informatika</option>
+            <option value="2">Kimia</option>
+            <option value="3">Olahraga</option>
+            <option value="4">Matematika</option>
+        </select>
+        <label for="alamat">ALAMAT:</label>
+        <input type="text" id="alamat" name="alamat" required>
+        <label for="gambar">GAMBAR:</label><br>
+        <input type="file" id="gambar" name="gambar" required><br>
+        <br>
+        <div class="form-actions">
+            <a href="/mahasiswa" class="icon"><i class="fas fa-arrow-left"></i> Kembali</a>
+            <button type="submit" class="icon"><i class="fas fa-save"></i> Simpan</button>
+        </div>
+    </form>
+</body>
+</html>

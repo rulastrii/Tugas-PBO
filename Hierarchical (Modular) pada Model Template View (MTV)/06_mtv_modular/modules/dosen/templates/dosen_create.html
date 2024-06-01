@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Dosen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css" />
+    <style>
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="date"],
+        select {
+            flex: 1; /* Menyesuaikan lebar input */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%; /* Memastikan select mengisi 100% lebar parent */
+        }
+        input[type="submit"] {
+            align-self: flex-end; /* Meletakkan tombol submit di kanan */
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tambah Dosen</h1>
+    </header>
+    <br><br>
+    <a href="/dosen"><i class="fas fa-arrow-left"></i> Kembali</a>
+    <br><br>
+        <form action="/dosen/store" method="POST">
+            <label for="nidn">NIDN:</label></td>
+                <input type="text" id="nidn" name="nidn" required>
+            <label for="nama">NAMA:</label></td>
+                <input type="text" id="nama" name="nama" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+</body>
+</html>

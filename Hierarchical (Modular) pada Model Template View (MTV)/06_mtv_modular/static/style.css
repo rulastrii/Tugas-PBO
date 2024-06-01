@@ -1,0 +1,190 @@
+/* Global Styles */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header and Footer Styles */
+header, footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Main Content Styles */
+main {
+    width: 80%;
+    max-width: 1200px; /* Menetapkan lebar maksimal untuk konten utama */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Actions Styles */
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.actions .search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-group {
+    display: flex;
+    align-items: center;
+}
+
+.search-group input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.search-group button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-group button[type="submit"]:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease; /* Animasi */
+}
+
+.table-container {
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid #333;
+    overflow-x: auto; /* Tambahkan overflow-x untuk scroll horizontal */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    white-space: nowrap; /* Hindari wrapping teks di dalam sel tabel */
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    color: #fff;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #e0e0e0;
+}
+
+tr:hover td {
+    background-color: #d0d0d0;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: none; /* Awalnya tersembunyi */
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination-button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Link Styles */
+a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: text-decoration 0.3s ease; /* Animasi */
+}
+
+/* Button Styles */
+button.icon, a.icon {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+button.icon i, a.icon i {
+    margin-right: 5px;
+}
+
+button.icon:hover, a.icon:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease; /* Animasi */
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    main {
+        width: 90%; /* Mengubah lebar utama menjadi 90% pada layar yang lebih kecil */
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-group {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
